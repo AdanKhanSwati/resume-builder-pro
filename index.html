@@ -58,6 +58,14 @@
   gtag('js', new Date());
   gtag('config', 'G-R8G2ZEL9PB');
 </script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xc7nra1mod");
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -488,14 +496,27 @@ img{max-width:100%;}
   .editor-pane,.preview-pane{max-height:none;}
   .topbar{position:sticky;}
 }
+
+/* ---- Unified site footer ---- */
+.site-footer{background:#16181D;color:#fff;padding:48px 24px 24px;margin-top:60px;}
+.site-footer .footer-inner{max-width:1080px;margin:0 auto;}
+.site-footer .footer-brand{margin-bottom:28px;}
+.site-footer .footer-brand .brand{font-size:21px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.01em;}
+.site-footer .footer-brand .brand span{color:#5B5BF5;}
+.site-footer .footer-brand p{color:#9AA0AC;font-size:13.5px;margin:0;max-width:420px;line-height:1.55;}
+.site-footer .footer-nav{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:28px;}
+.site-footer .footer-nav a,.site-footer .footer-nav button{color:#fff;text-decoration:none;font-size:13.5px;font-weight:500;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
+.site-footer .footer-nav a:hover,.site-footer .footer-nav button:hover{color:#5B5BF5;text-decoration:none;}
+.site-footer .footer-bottom{border-top:1px solid #2A2D33;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#9AA0AC;}
+.site-footer .footer-bottom a{color:#5B5BF5;text-decoration:none;font-weight:600;}
+.site-footer .footer-bottom a:hover{text-decoration:underline;}
+@media (max-width:640px){
+  .site-footer{padding:32px 16px 20px;}
+  .site-footer .footer-nav{flex-direction:column;gap:14px;}
+  .site-footer .footer-bottom{flex-direction:column;text-align:center;gap:8px;}
+}
+
 </style>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xc7nra1mod");
-</script>
 </head>
 <body>
 <div id="app"></div>
@@ -5230,6 +5251,31 @@ window.goToGuides = ()=>{ currentPage='guides'; location.hash='guides'; render()
 window.goToSeoPage = (slug)=>{ currentPage=slug; location.hash=slug; render(); window.scrollTo(0,0); };
 window.addEventListener('hashchange', ()=>{ currentPage = pageFromHash(); render(); window.scrollTo(0,0); });
 
+
+/* Unified site footer — used by all SPA routes */
+function renderFooter(){
+  return `
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand">Free<span> Resume</span> Builder</div>
+        <p>Build a resume that actually gets you interviews — free, ATS-friendly, and no signup required.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="/about-us.html">About Us</a>
+        <a href="/contact-us.html">Contact Us</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-of-service.html">Terms of Service</a>
+        <button class="footer-link-btn" onclick="goToGuides()">Resume Guides</button>
+      </nav>
+      <div class="footer-bottom">
+        <span>&copy; ${new Date().getFullYear()} Free Resume Builder. All rights reserved.</span>
+        <span>Created by <a href="https://www.instagram.com/adankhanswati" target="_blank" rel="noopener noreferrer">Adan Khan Swati</a></span>
+      </div>
+    </div>
+  </footer>`;
+}
+
 function renderLanding(){
   resetMetaToHome();
   return `
@@ -5297,10 +5343,7 @@ function renderLanding(){
     <button class="btn primary lg" onclick="goToBuilder()">Build my resume — it's free</button>
   </section>
 
-  <footer class="lp-footer">
-    <span>© ${new Date().getFullYear()} Free Resume Builder.</span>
-    <button class="back-link" onclick="goToGuides()" style="font-size:12.5px;">Browse all resume guides →</button>
-  </footer>
+  ${renderFooter()}
   `;
 }
 function lpFeature(icon,title,body){
@@ -5487,10 +5530,7 @@ function renderSeoPage(slug){
     <p style="text-align:center;margin-top:40px;"><button class="back-link" onclick="goToGuides()">← Browse all resume guides</button></p>
   </main>
 
-  <footer class="lp-footer">
-    <span>© ${new Date().getFullYear()} Free Resume Builder.</span>
-    <span>Built for job seekers, by job seekers.</span>
-  </footer>
+  ${renderFooter()}
   `;
 }
 
@@ -5539,10 +5579,7 @@ function renderGuidesIndex(){
     </section>`;
   });
   html += `</main>
-  <footer class="lp-footer">
-    <span>© ${new Date().getFullYear()} Free Resume Builder.</span>
-    <span>Built for job seekers, by job seekers.</span>
-  </footer>`;
+  ${renderFooter()}`;
   return html;
 }
 
