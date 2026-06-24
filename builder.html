@@ -5236,10 +5236,10 @@ function pageFromHash(){
   if(SEO_PAGES[h]) return h;
   return 'landing';
 }
-window.goToBuilder = ()=>{ currentPage='builder'; location.hash='builder'; render(); window.scrollTo(0,0); };
-window.goToLanding = ()=>{ currentPage='landing'; location.hash=''; render(); window.scrollTo(0,0); };
-window.goToGuides = ()=>{ currentPage='guides'; location.hash='guides'; render(); window.scrollTo(0,0); };
-window.goToSeoPage = (slug)=>{ currentPage=slug; location.hash=slug; render(); window.scrollTo(0,0); };
+window.goToBuilder = ()=>{ window.location.href='/builder.html'; };
+window.goToLanding = ()=>{ window.location.href='/'; };
+window.goToGuides = ()=>{ window.location.href='/guides.html'; };
+window.goToSeoPage = (slug)=>{ window.location.href='/'+slug+'.html'; };
 window.addEventListener('hashchange', ()=>{ currentPage = pageFromHash(); render(); window.scrollTo(0,0); });
 
 
