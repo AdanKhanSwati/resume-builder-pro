@@ -270,7 +270,7 @@ body.on-landing{background:#fff;}
 .lp-cta-row{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:48px;}
 .btn.lg{padding:14px 28px;font-size:15px;border-radius:12px;}
 .lp-cta-note{font-size:12.5px;color:var(--ink-soft);}
-.lp-hero-preview{transform:scale(0.82);transform-origin:top center;margin:0 auto;display:flex;justify-content:center;filter:drop-shadow(0 20px 40px rgba(16,24,40,.12));}
+.lp-hero-preview{transform:scale(0.82);transform-origin:top center;margin:0 auto;display:flex;justify-content:center;filter:drop-shadow(0 20px 40px rgba(16,24,40,.12));max-width:600px;width:100%;}
 .lp-hero-preview .paper{max-width:600px;}
 
 .lp-logos{padding:30px 24px;text-align:center;border-bottom:1px solid var(--rule);border-top:1px solid var(--rule);}
@@ -376,7 +376,28 @@ body.on-landing{background:#fff;}
 .ad-footer-zone{display:flex;justify-content:center;align-items:flex-start;gap:16px;flex-wrap:wrap;margin:28px auto;max-width:1080px;}
 .ad-footer-zone .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
 .ad-sponsored-link{font-size:11px;color:#9AA0AC;padding:8px 0;text-align:center;}
+
+.hero-with-side-ads{display:flex;align-items:flex-start;justify-content:center;gap:20px;max-width:1200px;margin:20px auto;}
+.hero-ad-left,.hero-ad-right{flex-shrink:0;width:160px;text-align:center;}
+.hero-ad-left .ad-label,.hero-ad-right .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.hero-center{flex:1;min-width:0;max-width:880px;text-align:center;}
+.hero-mobile-ad{display:none;}
+@media(max-width:1024px){.hero-ad-left,.hero-ad-right{display:none !important;}.hero-with-side-ads{display:block;}.hero-mobile-ad{display:block;margin:30px auto;max-width:160px;text-align:center;}.hero-mobile-ad .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}}
+
 .ad-sponsored-link a{color:#9AA0AC;text-decoration:underline;}
+
+
+.hero-ad-left,.hero-ad-right{flex-shrink:0;width:160px;text-align:center;display:block;}
+.hero-ad-left .ad-label,.hero-ad-right .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.hero-center{flex:1;min-width:0;text-align:center;max-width:880px;}
+.hero-mobile-ad{display:none;}
+@media(max-width:1024px){
+  .hero-ad-left,.hero-ad-right{display:none !important;}
+  .hero-with-side-ads{display:block;}
+  .hero-mobile-ad{display:block;margin:30px auto;max-width:160px;text-align:center;}
+  .hero-mobile-ad .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+}
+
 .preview-pane{display:flex !important;flex-direction:column !important;align-items:center !important;justify-content:flex-start !important;}
 .preview-ad{max-width:300px;width:100%;}
 
@@ -5249,7 +5270,6 @@ window.addEventListener('hashchange', ()=>{ currentPage = pageFromHash(); render
 function renderLanding(){
   resetMetaToHome();
   return `
-  <div class="ad-zone ad-desktop"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'ca49db0c7a7123415ec2270b8205e1c6','format':'iframe','height':90,'width':728,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/ca49db0c7a7123415ec2270b8205e1c6/invoke.js'&gt;&lt;/script&gt;" width="728" height="90" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div><div class="ad-zone ad-mobile"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'6ffcc3d01d625bacbc8323c3bb122133','format':'iframe','height':50,'width':320,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/6ffcc3d01d625bacbc8323c3bb122133/invoke.js'&gt;&lt;/script&gt;" width="320" height="50" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
   <header class="lp-nav">
     <div class="lp-nav-inner">
       <div class="brand"><span class="mark">Free<span> Resume</span> Builder</span></div>
@@ -5259,7 +5279,7 @@ function renderLanding(){
       </div>
     </div>
   </header>
-
+  <div class="ad-zone ad-desktop"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'ca49db0c7a7123415ec2270b8205e1c6','format':'iframe','height':90,'width':728,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/ca49db0c7a7123415ec2270b8205e1c6/invoke.js'&gt;&lt;/script&gt;" width="728" height="90" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div><div class="ad-zone ad-mobile"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'6ffcc3d01d625bacbc8323c3bb122133','format':'iframe','height':50,'width':320,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/6ffcc3d01d625bacbc8323c3bb122133/invoke.js'&gt;&lt;/script&gt;" width="320" height="50" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
   <section class="lp-hero">
     <div class="lp-hero-inner">
       <span class="lp-pill">100% free · no signup · no watermark</span>
@@ -5269,7 +5289,16 @@ function renderLanding(){
         <button class="btn primary lg" onclick="goToBuilder()">Build my resume — it's free</button>
         <span class="lp-cta-note">No account needed · your data stays in your browser</span>
       </div>
-      <div class="lp-hero-preview">${renderPreview()}</div>
+    </div>
+    <div class="hero-with-side-ads">
+      <div class="hero-ad-left"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'0a50ce6f44742cb9b7e4c6030077c2bf','format':'iframe','height':600,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/0a50ce6f44742cb9b7e4c6030077c2bf/invoke.js'&gt;&lt;/script&gt;" width="160" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;"></iframe></div>
+      <div class="hero-center">
+        <div class="lp-hero-preview">${renderPreview()}</div>
+        <div class="ad-zone" style="margin-top:30px;"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'c1cafd7a4ca0a24cd3ee2197fa5a796b','format':'iframe','height':250,'width':300,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/c1cafd7a4ca0a24cd3ee2197fa5a796b/invoke.js'&gt;&lt;/script&gt;" width="300" height="250" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
+        <div class="hero-mobile-ad"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'0a50ce6f44742cb9b7e4c6030077c2bf','format':'iframe','height':600,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/0a50ce6f44742cb9b7e4c6030077c2bf/invoke.js'&gt;&lt;/script&gt;" width="160" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;"></iframe></div>
+      </div>
+      <div class="hero-ad-right"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'0a50ce6f44742cb9b7e4c6030077c2bf','format':'iframe','height':600,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/0a50ce6f44742cb9b7e4c6030077c2bf/invoke.js'&gt;&lt;/script&gt;" width="160" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;"></iframe></div>
+    </div>
     </div>
   </section>
 
