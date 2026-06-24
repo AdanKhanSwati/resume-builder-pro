@@ -33,21 +33,17 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#5B5BF5">
 
-<!-- Structured Data: WebSite schema (homepage) -->
+<!-- Structured Data -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Free Resume Builder","url":"https://www.freeresumebuilder.pro/","description":"Build a professional, ATS-friendly resume online for free with live preview and AI-assisted writing.","potentialAction":{"@type":"SearchAction","target":"https://www.freeresumebuilder.pro/#guides","query-input":"required name=search_term_string"}}
 </script>
-<!-- Structured Data: WebApplication schema -->
 <script type="application/ld+json" id="webapp-schema">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Free Resume Builder","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Build a professional, ATS-friendly resume online for free with live preview and AI-assisted writing.","url":"https://www.freeresumebuilder.pro/"}
 </script>
-<!-- Structured Data: Organization -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Free Resume Builder","url":"https://www.freeresumebuilder.pro/","logo":"https://www.freeresumebuilder.pro/apple-touch-icon.png"}
 </script>
-<!-- Placeholder for dynamic per-route FAQ schema (set by JS when navigating to a SEO page) -->
 <script type="application/ld+json" id="seoFaqJsonLd">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8G2ZEL9PB"></script>
@@ -58,14 +54,17 @@
   gtag('js', new Date());
   gtag('config', 'G-R8G2ZEL9PB');
 </script>
+
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    t=l.createElement(r); t.async=1; t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "xc7nra1mod");
 </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -367,7 +366,7 @@ body.on-landing{background:#fff;}
 .seo-faq-item summary{font-weight:600;font-size:14px;cursor:pointer;}
 .seo-faq-item p{font-size:13px;color:var(--ink-soft);line-height:1.55;margin:10px 0 0;}
 
-/* ---- New SEO content sections: info cards (what-to-include / tips / mistakes) ---- */
+/* SEO content sections */
 .seo-info-section{margin-top:50px;}
 .seo-info-section h2{font-size:24px;font-weight:800;margin-bottom:22px;text-align:center;}
 .seo-info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:left;}
@@ -378,18 +377,37 @@ body.on-landing{background:#fff;}
 .seo-info-card.warn h3{color:#92400E;}
 .seo-info-card.tip{border-color:#C7E9D8;background:#F5FBF8;}
 .seo-info-card.tip h3{color:#166534;}
-
-/* ---- Related guides section ---- */
 .seo-related{margin-top:50px;}
 .seo-related h2{font-size:22px;font-weight:800;margin-bottom:18px;text-align:center;}
 .seo-related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
 .seo-related-card{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--rule);border-radius:12px;padding:14px 16px;background:#fff;font-size:13.5px;font-weight:600;color:var(--ink);text-align:left;cursor:pointer;}
 .seo-related-card:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-soft);}
 .seo-related-card .arrow{color:var(--ink-soft);}
+@media (max-width:640px){.seo-info-grid,.seo-related-grid{grid-template-columns:1fr;}}
 
-@media (max-width:640px){
-  .seo-info-grid,.seo-related-grid{grid-template-columns:1fr;}
-}
+.site-footer{background:#16181D;color:#fff;padding:48px 24px 24px;margin-top:60px;}
+.site-footer .footer-inner{max-width:1080px;margin:0 auto;}
+.site-footer .footer-brand{margin-bottom:28px;}
+.site-footer .footer-brand .brand{font-size:21px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.01em;}
+.site-footer .footer-brand .brand span{color:#5B5BF5;}
+.site-footer .footer-brand p{color:#9AA0AC;font-size:13.5px;margin:0;max-width:420px;line-height:1.55;}
+.site-footer .footer-nav{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:28px;}
+.site-footer .footer-nav a,.site-footer .footer-nav button{color:#fff;text-decoration:none;font-size:13.5px;font-weight:500;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
+.site-footer .footer-nav a:hover,.site-footer .footer-nav button:hover{color:#5B5BF5;text-decoration:none;}
+.site-footer .footer-bottom{border-top:1px solid #2A2D33;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#9AA0AC;}
+.site-footer .footer-bottom a{color:#5B5BF5;text-decoration:none;font-weight:600;}
+.site-footer .footer-bottom a:hover{text-decoration:underline;}
+@media (max-width:640px){.site-footer{padding:32px 16px 20px;}.site-footer .footer-nav{flex-direction:column;gap:14px;}.site-footer .footer-bottom{flex-direction:column;text-align:center;gap:8px;}}
+
+
+.ad-zone{text-align:center;margin:28px auto;max-width:100%;overflow:hidden;clear:both;}
+.ad-zone .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.ad-desktop{display:block;}.ad-mobile{display:none;}
+@media(max-width:768px){.ad-desktop{display:none;}.ad-mobile{display:block;}}
+.ad-footer-zone{display:flex;justify-content:center;align-items:flex-start;gap:16px;flex-wrap:wrap;margin:28px auto;max-width:1080px;}
+.ad-sponsored-link{font-size:11px;color:#9AA0AC;padding:8px 0;text-align:center;}
+.ad-sponsored-link a{color:#9AA0AC;text-decoration:underline;}
+
 
 .guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px;}
 .guide-card{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--rule);border-radius:12px;padding:14px 16px;background:#fff;font-size:13.5px;font-weight:600;color:var(--ink);text-align:left;cursor:pointer;}
@@ -496,29 +514,10 @@ img{max-width:100%;}
   .editor-pane,.preview-pane{max-height:none;}
   .topbar{position:sticky;}
 }
-
-/* ---- Unified site footer ---- */
-.site-footer{background:#16181D;color:#fff;padding:48px 24px 24px;margin-top:60px;}
-.site-footer .footer-inner{max-width:1080px;margin:0 auto;}
-.site-footer .footer-brand{margin-bottom:28px;}
-.site-footer .footer-brand .brand{font-size:21px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.01em;}
-.site-footer .footer-brand .brand span{color:#5B5BF5;}
-.site-footer .footer-brand p{color:#9AA0AC;font-size:13.5px;margin:0;max-width:420px;line-height:1.55;}
-.site-footer .footer-nav{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:28px;}
-.site-footer .footer-nav a,.site-footer .footer-nav button{color:#fff;text-decoration:none;font-size:13.5px;font-weight:500;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
-.site-footer .footer-nav a:hover,.site-footer .footer-nav button:hover{color:#5B5BF5;text-decoration:none;}
-.site-footer .footer-bottom{border-top:1px solid #2A2D33;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#9AA0AC;}
-.site-footer .footer-bottom a{color:#5B5BF5;text-decoration:none;font-weight:600;}
-.site-footer .footer-bottom a:hover{text-decoration:underline;}
-@media (max-width:640px){
-  .site-footer{padding:32px 16px 20px;}
-  .site-footer .footer-nav{flex-direction:column;gap:14px;}
-  .site-footer .footer-bottom{flex-direction:column;text-align:center;gap:8px;}
-}
-
 </style>
 </head>
 <body>
+<div class="ad-zone ad-desktop"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'ca49db0c7a7123415ec2270b8205e1c6','format':'iframe','height':90,'width':728,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/ca49db0c7a7123415ec2270b8205e1c6/invoke.js'&gt;&lt;/script&gt;" width="728" height="90" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div><div class="ad-zone ad-mobile"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'6ffcc3d01d625bacbc8323c3bb122133','format':'iframe','height':50,'width':320,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/6ffcc3d01d625bacbc8323c3bb122133/invoke.js'&gt;&lt;/script&gt;" width="320" height="50" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
 <div id="app"></div>
 
 <script>
@@ -5195,7 +5194,43 @@ window.exportPDF = ()=>{
       <button onclick="window.print()">Print / Save as PDF</button>
     </div>
     ${paper.outerHTML}
-    </body></html>`;
+    
+<!-- Dynamic ad loader — loads external ad scripts AFTER the SPA has rendered -->
+<script>
+(function() {
+  // Wait for the SPA to finish rendering, then load ad scripts
+  function loadAdScripts() {
+    // 1. Popunder
+    var popunder = document.createElement('script');
+    popunder.async = true;
+    popunder.src = 'https://pl29885360.effectivecpmnetwork.com/1c/7b/48/1c7b48a4596c67f885b1c83ad4739be7.js';
+    document.head.appendChild(popunder);
+
+    // 2. Social Bar
+    var socialBar = document.createElement('script');
+    socialBar.async = true;
+    socialBar.src = 'https://pl29885363.effectivecpmnetwork.com/6b/06/6c/6b066c4e22005265614e5eeb254318a0.js';
+    document.body.appendChild(socialBar);
+
+    // 3. Native Banner
+    var nativeBanner = document.createElement('script');
+    nativeBanner.async = true;
+    nativeBanner.setAttribute('data-cfasync', 'false');
+    nativeBanner.src = 'https://pl29885362.effectivecpmnetwork.com/26b5fa80071a4e882a4acebdb70e8e25/invoke.js';
+    document.body.appendChild(nativeBanner);
+  }
+
+  // Load ads after the DOM is ready + a small delay for SPA rendering
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(loadAdScripts, 500);
+    });
+  } else {
+    setTimeout(loadAdScripts, 500);
+  }
+})();
+<\/script>
+</body></html>`;
   const blob = new Blob([docHTML], {type:'text/html'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -5245,14 +5280,13 @@ function pageFromHash(){
   if(SEO_PAGES[h]) return h;
   return 'landing';
 }
-window.goToBuilder = ()=>{ window.location.href='/builder.html'; };
-window.goToLanding = ()=>{ window.location.href='/'; };
-window.goToGuides = ()=>{ window.location.href='/guides.html'; };
-window.goToSeoPage = (slug)=>{ window.location.href='/'+slug+'.html'; };
+window.goToBuilder = ()=>{ currentPage='builder'; location.hash='builder'; render(); window.scrollTo(0,0); };
+window.goToLanding = ()=>{ currentPage='landing'; location.hash=''; render(); window.scrollTo(0,0); };
+window.goToGuides = ()=>{ currentPage='guides'; location.hash='guides'; render(); window.scrollTo(0,0); };
+window.goToSeoPage = (slug)=>{ currentPage=slug; location.hash=slug; render(); window.scrollTo(0,0); };
 window.addEventListener('hashchange', ()=>{ currentPage = pageFromHash(); render(); window.scrollTo(0,0); });
 
 
-/* Unified site footer — used by all SPA routes */
 function renderFooter(){
   return `
   <footer class="site-footer">
@@ -5276,8 +5310,12 @@ function renderFooter(){
   </footer>`;
 }
 
+window.goToBuilder = ()=>{ window.location.href='/builder.html'; };
+window.goToLanding = ()=>{ window.location.href='/'; };
+window.goToGuides = ()=>{ window.location.href='/guides.html'; };
+window.goToSeoPage = (slug)=>{ window.location.href='/'+slug+'.html'; };
 function renderLanding(){
-  resetMetaToHome();
+resetMetaToHome();
   return `
   <header class="lp-nav">
     <div class="lp-nav-inner">
@@ -5360,48 +5398,11 @@ function lpFaq(q,a){
    PROGRAMMATIC SEO LANDING PAGES — RENDER
 ===================================================================== */
 
-/* =====================================================================
-   SEO META HELPERS — dynamically update head tags on route change
-===================================================================== */
-function setMeta(name, content){
-  let m = document.querySelector('meta[name="' + name + '"]');
-  if(!m){ m = document.createElement('meta'); m.setAttribute('name', name); document.head.appendChild(m); }
-  m.setAttribute('content', content);
-}
-function setMetaProp(prop, content){
-  const attr = prop.indexOf('twitter:')===0 ? 'name' : 'property';
-  let m = document.querySelector('meta[' + attr + '="' + prop + '"]');
-  if(!m){ m = document.createElement('meta'); m.setAttribute(attr, prop); document.head.appendChild(m); }
-  m.setAttribute('content', content);
-}
-function setOG(prop, content){
-  let m = document.querySelector('meta[property="' + prop + '"]');
-  if(!m){ m = document.createElement('meta'); m.setAttribute('property', prop); document.head.appendChild(m); }
-  m.setAttribute('content', content);
-}
-function setLinkRel(rel, href){
-  let l = document.querySelector('link[rel="' + rel + '"]');
-  if(!l){ l = document.createElement('link'); l.setAttribute('rel', rel); document.head.appendChild(l); }
-  l.setAttribute('href', href);
-}
-function resetMetaToHome(){
-  document.title = 'Free Resume Builder — Create a Professional Resume Online in Minutes';
-  setMeta('description', 'Build a professional, ATS-friendly resume for free. Add your experience, skills and projects, preview it live, and download as PDF or DOCX — no signup required.');
-  setMeta('keywords', 'free resume builder, resume maker, cv builder, ats resume, online resume builder, build resume free');
-  setLinkRel('canonical', SITE_DOMAIN + '/');
-  setOG('og:type', 'website');
-  setOG('og:title', 'Free Resume Builder — Create a Professional Resume Online');
-  setOG('og:description', 'Build, preview and export a professional, ATS-friendly resume for free. No signup required.');
-  setOG('og:url', SITE_DOMAIN + '/');
-  setOG('og:image', SITE_DOMAIN + '/og-image.png');
-  setMetaProp('twitter:title', 'Free Resume Builder — Create a Professional Resume Online');
-  setMetaProp('twitter:description', 'Build, preview and export a professional, ATS-friendly resume for free. No signup required.');
-  setMetaProp('twitter:image', SITE_DOMAIN + '/og-image.png');
-  let ld = document.getElementById('seoFaqJsonLd');
-  if(ld) ld.textContent = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]});
-  let bc = document.getElementById('seoBreadcrumbLd');
-  if(bc) bc.textContent = '{}';
-}
+function setMeta(name, content){ let m = document.querySelector('meta[name="' + name + '"]'); if(!m){ m = document.createElement('meta'); m.setAttribute('name', name); document.head.appendChild(m); } m.setAttribute('content', content); }
+function setMetaProp(prop, content){ const attr = prop.indexOf('twitter:')===0 ? 'name' : 'property'; let m = document.querySelector('meta[' + attr + '="' + prop + '"]'); if(!m){ m = document.createElement('meta'); m.setAttribute(attr, prop); document.head.appendChild(m); } m.setAttribute('content', content); }
+function setOG(prop, content){ let m = document.querySelector('meta[property="' + prop + '"]'); if(!m){ m = document.createElement('meta'); m.setAttribute('property', prop); document.head.appendChild(m); } m.setAttribute('content', content); }
+function setLinkRel(rel, href){ let l = document.querySelector('link[rel="' + rel + '"]'); if(!l){ l = document.createElement('link'); l.setAttribute('rel', rel); document.head.appendChild(l); } l.setAttribute('href', href); }
+function resetMetaToHome(){ document.title = 'Free Resume Builder — Create a Professional Resume Online in Minutes'; setMeta('description', 'Build a professional, ATS-friendly resume for free. Add your experience, skills and projects, preview it live, and download as PDF or DOCX — no signup required.'); setMeta('keywords', 'free resume builder, resume maker, cv builder, ats resume, online resume builder, build resume free'); setLinkRel('canonical', SITE_DOMAIN + '/'); setOG('og:type', 'website'); setOG('og:title', 'Free Resume Builder — Create a Professional Resume Online'); setOG('og:description', 'Build, preview and export a professional, ATS-friendly resume for free. No signup required.'); setOG('og:url', SITE_DOMAIN + '/'); setOG('og:image', SITE_DOMAIN + '/og-image.png'); setMetaProp('twitter:title', 'Free Resume Builder — Create a Professional Resume Online'); setMetaProp('twitter:description', 'Build, preview and export a professional, ATS-friendly resume for free. No signup required.'); setMetaProp('twitter:image', SITE_DOMAIN + '/og-image.png'); let ld = document.getElementById('seoFaqJsonLd'); if(ld) ld.textContent = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}); let bc = document.getElementById('seoBreadcrumbLd'); if(bc) bc.textContent = '{}'; }
 
 const SEO_FEATURES = [
   {icon:'☑', title:'ATS-optimized format', body:'Clean, scannable structure designed to pass applicant tracking systems.'},
@@ -5413,8 +5414,6 @@ const SEO_FEATURES = [
 function renderSeoPage(slug){
   const data = SEO_PAGES[slug];
   if(!data) return renderLanding();
-
-  // --- Dynamic meta tags ---
   const canonicalUrl = SITE_DOMAIN + '/' + slug + '.html';
   document.title = data.metaTitle;
   setMeta('description', data.metaDescription);
@@ -5428,130 +5427,36 @@ function renderSeoPage(slug){
   setMetaProp('twitter:title', data.metaTitle);
   setMetaProp('twitter:description', data.metaDescription);
   setMetaProp('twitter:image', SITE_DOMAIN + '/og-image.png');
-
-  // --- Dynamic FAQ JSON-LD ---
-  const faqJsonLd = {
-    "@context":"https://schema.org","@type":"FAQPage",
-    mainEntity: data.faqs.map(f=>({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))
-  };
+  const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage",mainEntity: data.faqs.map(f=>({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))};
   let ld = document.getElementById('seoFaqJsonLd');
   if(!ld){ ld = document.createElement('script'); ld.id='seoFaqJsonLd'; ld.type='application/ld+json'; document.head.appendChild(ld); }
   ld.textContent = JSON.stringify(faqJsonLd);
-
-  // --- Breadcrumb JSON-LD ---
   let bc = document.getElementById('seoBreadcrumbLd');
   if(!bc){ bc = document.createElement('script'); bc.id='seoBreadcrumbLd'; bc.type='application/ld+json'; document.head.appendChild(bc); }
-  bc.textContent = JSON.stringify({
-    "@context":"https://schema.org","@type":"BreadcrumbList",
-    itemListElement:[
-      {"@type":"ListItem","position":1,"name":"Home","item":SITE_DOMAIN + "/"},
-      {"@type":"ListItem","position":2,"name":"Resume Guides","item":SITE_DOMAIN + "/#guides"},
-      {"@type":"ListItem","position":3,"name":data.h1,"item":canonicalUrl}
-    ]
-  });
-
-  // --- Render info-card sections (whatToInclude / tips / mistakes) ---
-  const whatToIncludeHtml = (data.whatToInclude||[]).map(it =>
-    `<div class="seo-info-card"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`
-  ).join('');
-  const tipsHtml = (data.tips||[]).map(it =>
-    `<div class="seo-info-card tip"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`
-  ).join('');
-  const mistakesHtml = (data.mistakes||[]).map(it =>
-    `<div class="seo-info-card warn"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`
-  ).join('');
-
-  // --- Related guides (same category) ---
-  const related = SEO_SLUGS
-    .filter(s => s !== slug && SEO_PAGES[s].category === data.category)
-    .slice(0, 6)
-    .map(s => `<button class="seo-related-card" onclick="goToSeoPage('${s}')"><span>${esc(SEO_PAGES[s].h1)}</span><span class="arrow">→</span></button>`)
-    .join('');
-
+  bc.textContent = JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem","position":1,"name":"Home","item":SITE_DOMAIN + "/"},{"@type":"ListItem","position":2,"name":"Resume Guides","item":SITE_DOMAIN + "/#guides"},{"@type":"ListItem","position":3,"name":data.h1,"item":canonicalUrl}]});
+  const whatToIncludeHtml = (data.whatToInclude||[]).map(it => `<div class="seo-info-card"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`).join('');
+  const tipsHtml = (data.tips||[]).map(it => `<div class="seo-info-card tip"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`).join('');
+  const mistakesHtml = (data.mistakes||[]).map(it => `<div class="seo-info-card warn"><h3>${esc(it.title)}</h3><p>${esc(it.body)}</p></div>`).join('');
+  const related = SEO_SLUGS.filter(s => s !== slug && SEO_PAGES[s].category === data.category).slice(0, 6).map(s => `<button class="seo-related-card" onclick="goToSeoPage('${s}')"><span>${esc(SEO_PAGES[s].h1)}</span><span class="arrow">&rarr;</span></button>`).join('');
   return `
-  <header class="lp-nav">
-    <div class="lp-nav-inner">
-      <button class="back-link" onclick="goToLanding()">← Home</button>
-      <div class="brand"><span class="mark">Free<span> Resume</span> Builder</span></div>
-      <button class="btn primary" onclick="goToBuilder()">Build my resume</button>
-    </div>
-  </header>
-
-  <main class="seo-page">
-    <section class="seo-hero">
-      <span class="seo-eyebrow">${esc(data.category)}</span>
-      <h1>${esc(data.h1)}</h1>
-      <p class="seo-hero-sub">${esc(data.intro[0])}</p>
-      <button class="seo-cta-btn" onclick="goToBuilder()">👉 Create Your Resume Now</button>
-    </section>
-
-    <section class="seo-intro">
-      ${data.intro.slice(1).map(p=>`<p>${esc(p)}</p>`).join('')}
-    </section>
-
-    ${whatToIncludeHtml ? `<section class="seo-info-section">
-      <h2>What to include</h2>
-      <div class="seo-info-grid">${whatToIncludeHtml}</div>
-    </section>` : ''}
-
-    <section class="seo-features">
-      <h2>Why use this tool</h2>
-      <div class="seo-features-grid">
-        ${SEO_FEATURES.map(f=>`<div class="seo-feature-card"><div class="seo-feature-icon">${f.icon}</div><h3>${f.title}</h3><p>${f.body}</p></div>`).join('')}
-      </div>
-    </section>
-
-    ${tipsHtml ? `<section class="seo-info-section">
-      <h2>Tips for a stronger resume</h2>
-      <div class="seo-info-grid">${tipsHtml}</div>
-    </section>` : ''}
-
-    <section class="seo-cta-banner">
-      <h2>Ready to build your resume?</h2>
-      <p>It takes less than 10 minutes to go from a blank page to a polished, downloadable resume.</p>
-      <button class="seo-cta-btn seo-cta-btn-light" onclick="goToBuilder()">👉 Create Your Resume Now</button>
-    </section>
-
-    ${mistakesHtml ? `<section class="seo-info-section">
-      <h2>Common mistakes to avoid</h2>
-      <div class="seo-info-grid">${mistakesHtml}</div>
-    </section>` : ''}
-
-    <section class="seo-faq">
-      <h2>Frequently Asked Questions</h2>
-      ${data.faqs.map(f=>`<details class="seo-faq-item"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}
-    </section>
-
-    ${related ? `<section class="seo-related">
-      <h2>Related resume guides</h2>
-      <div class="seo-related-grid">${related}</div>
-    </section>` : ''}
-
-    <p style="text-align:center;margin-top:40px;"><button class="back-link" onclick="goToGuides()">← Browse all resume guides</button></p>
+  <header class="lp-nav"><div class="lp-nav-inner"><button class="back-link" onclick="goToLanding()">&larr; Home</button><div class="brand"><span class="mark">Free<span> Resume</span> Builder</span></div><button class="btn primary" onclick="goToBuilder()">Build my resume</button></div></header>
+  <main class="seo-page"><section class="seo-hero"><span class="seo-eyebrow">${esc(data.category)}</span><h1>${esc(data.h1)}</h1><p class="seo-hero-sub">${esc(data.intro[0])}</p><button class="seo-cta-btn" onclick="goToBuilder()">&#128077; Create Your Resume Now</button></section>
+  <section class="seo-intro">${data.intro.slice(1).map(p=>`<p>${esc(p)}</p>`).join('')}</section>
+  ${whatToIncludeHtml ? `<section class="seo-info-section"><h2>What to include</h2><div class="seo-info-grid">${whatToIncludeHtml}</div></section>` : ''}
+  <section class="seo-features"><h2>Why use this tool</h2><div class="seo-features-grid">${SEO_FEATURES.map(f=>`<div class="seo-feature-card"><div class="seo-feature-icon">${f.icon}</div><h3>${f.title}</h3><p>${f.body}</p></div>`).join('')}</div></section>
+  ${tipsHtml ? `<section class="seo-info-section"><h2>Tips for a stronger resume</h2><div class="seo-info-grid">${tipsHtml}</div></section>` : ''}
+  <section class="seo-cta-banner"><h2>Ready to build your resume?</h2><p>It takes less than 10 minutes to go from a blank page to a polished, downloadable resume.</p><button class="seo-cta-btn seo-cta-btn-light" onclick="goToBuilder()">&#128077; Create Your Resume Now</button></section>
+  ${mistakesHtml ? `<section class="seo-info-section"><h2>Common mistakes to avoid</h2><div class="seo-info-grid">${mistakesHtml}</div></section>` : ''}
+  <section class="seo-faq"><h2>Frequently Asked Questions</h2>${data.faqs.map(f=>`<details class="seo-faq-item"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('')}</section>
+  ${related ? `<section class="seo-related"><h2>Related resume guides</h2><div class="seo-related-grid">${related}</div></section>` : ''}
+  <p style="text-align:center;margin-top:40px;"><button class="back-link" onclick="goToGuides()">&larr; Browse all resume guides</button></p>
   </main>
-
   ${renderFooter()}
   `;
 }
 
 function renderGuidesIndex(){
-  const canonicalUrl = SITE_DOMAIN + '/guides.html';
   document.title = 'Resume Guides — Free Resume Builder';
-  setMeta('description', 'Browse all resume guides by experience level, country, and profession. Targeted advice and a free builder for your situation.');
-  setMeta('keywords', 'resume guides, resume examples, resume templates, how to write a resume, resume tips');
-  setLinkRel('canonical', canonicalUrl);
-  setOG('og:type', 'website');
-  setOG('og:title', 'Resume Guides — Free Resume Builder');
-  setOG('og:description', 'Browse all resume guides by experience level, country, and profession. Targeted advice and a free builder for your situation.');
-  setOG('og:url', canonicalUrl);
-  setOG('og:image', SITE_DOMAIN + '/og-image.png');
-  setMetaProp('twitter:title', 'Resume Guides — Free Resume Builder');
-  setMetaProp('twitter:description', 'Browse all resume guides by experience level, country, and profession.');
-  setMetaProp('twitter:image', SITE_DOMAIN + '/og-image.png');
-  let ld = document.getElementById('seoFaqJsonLd');
-  if(ld) ld.textContent = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]});
-  let bc = document.getElementById('seoBreadcrumbLd');
-  if(bc) bc.textContent = '{}';
   const byCategory = {};
   SEO_SLUGS.forEach(slug=>{
     const d = SEO_PAGES[slug];
@@ -5636,5 +5541,16 @@ window.setHeaderAlign = (v)=> setState(s=> s.headerAlign=v);
 currentPage = pageFromHash();
 render();
 </script>
+<!-- Adsterra ad zone (persistent — outside SPA render context) -->
+<div class="ad-spa-zone" style="max-width:1080px;margin:0 auto;padding:20px 16px;">
+  <div class="ad-zone"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'c1cafd7a4ca0a24cd3ee2197fa5a796b','format':'iframe','height':250,'width':300,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/c1cafd7a4ca0a24cd3ee2197fa5a796b/invoke.js'&gt;&lt;/script&gt;" width="300" height="250" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
+  <div class="ad-zone"></div>
+  <div class="ad-zone"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'8c325f0c80cf174411db30fcf043dbab','format':'iframe','height':60,'width':468,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/8c325f0c80cf174411db30fcf043dbab/invoke.js'&gt;&lt;/script&gt;" width="468" height="60" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
+  <div class="ad-footer-zone">
+    <div><span class="ad-label" style="display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'0a50ce6f44742cb9b7e4c6030077c2bf','format':'iframe','height':600,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/0a50ce6f44742cb9b7e4c6030077c2bf/invoke.js'&gt;&lt;/script&gt;" width="160" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
+    <div><span class="ad-label" style="display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'e21b91ab5abd0ab771f2ab9a40969322','format':'iframe','height':300,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/e21b91ab5abd0ab771f2ab9a40969322/invoke.js'&gt;&lt;/script&gt;" width="160" height="300" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
+  </div>
+  <div class="ad-sponsored-link"><a href="https://www.effectivecpmnetwork.com/wkvvgja5v1?key=7d33c019b2e7bbb19842962703bc8f4f" target="_blank" rel="nofollow sponsored noopener">Sponsored</a></div>
+</div>
 </body>
 </html>
