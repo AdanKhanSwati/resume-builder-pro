@@ -379,10 +379,16 @@ body.on-landing{background:#fff;}
 .ad-sponsored-link a{color:#9AA0AC;text-decoration:underline;}
 
 .hero-with-side-ads{display:flex;align-items:flex-start;justify-content:center;gap:20px;max-width:1200px;margin:0 auto;}
-.hero-ad-left,.hero-ad-right{flex-shrink:0;width:160px;text-align:center;}
+.hero-ad-left,.hero-ad-right{flex-shrink:0;width:160px;text-align:center;display:block;}
 .hero-ad-left .ad-label,.hero-ad-right .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
 .hero-center{flex:1;min-width:0;text-align:center;}
-@media(max-width:1024px){.hero-ad-left,.hero-ad-right{display:none;}.hero-with-side-ads{display:block;}}
+.hero-mobile-ad{display:none;}
+@media(max-width:1024px){
+  .hero-ad-left,.hero-ad-right{display:none !important;}
+  .hero-with-side-ads{display:block;}
+  .hero-mobile-ad{display:block;margin:30px auto;max-width:160px;text-align:center;}
+  .hero-mobile-ad .ad-label{display:block;font-size:10px;color:#9AA0AC;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+}.hero-with-side-ads{display:block;}}
 
 
 
@@ -5196,12 +5202,6 @@ window.exportPDF = ()=>{
   }
 })();
 <\/script>
-
-
-
-
-
-
 </body></html>`;
   const blob = new Blob([docHTML], {type:'text/html'});
   const url = URL.createObjectURL(blob);
@@ -5219,27 +5219,7 @@ window.exportDOCX = ()=>{
   if(!paper) return;
   const styles = `body{font-family:Calibri,Arial,sans-serif;color:#1a1a1a;} h1{font-size:22pt;margin-bottom:2pt;} .p-title{font-size:12pt;color:#444;margin-bottom:6pt;} .p-h{font-size:11pt;text-transform:uppercase;letter-spacing:1px;color:#5B5BF5;border-bottom:1px solid #ccc;margin-top:14pt;} .p-contact span:not(:last-child)::after{content:' · ';} ul{margin:4pt 0;} .p-entry-date{color:#666;font-size:9pt;}`;
   const html = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
-  <head><meta charset="utf-8"><title>${esc(filenameBase())}</title><style>${styles}
-/* MOBILE: Hide ALL Adsterra ads to prevent redirect-trap */
-@media(max-width:1024px){
-  .ad-zone,.ad-footer-zone,.ad-sponsored-link,.hero-ad-left,.hero-ad-right,
-  .ad-mobile-ad,.ad-spa-zone,.preview-ad,
-  iframe[srcdoc*="highperformanceformat"],
-  iframe[srcdoc*="effectivecpmnetwork"]{
-    display:none !important;
-    visibility:hidden !important;
-    width:0 !important;
-    height:0 !important;
-    max-width:0 !important;
-    max-height:0 !important;
-    overflow:hidden !important;
-    position:absolute !important;
-    left:-9999px !important;
-  }
-  #container-26b5fa80071a4e882a4acebdb70e8e25{display:none !important;}
-}
-
-</style></head>
+  <head><meta charset="utf-8"><title>${esc(filenameBase())}</title><style>${styles}</style></head>
   <body>${paper.innerHTML}</body></html>`;
   const blob = new Blob(['\ufeff', html], {type:'application/msword'});
   triggerDownload(blob, filenameBase()+'.doc');
@@ -5273,10 +5253,10 @@ function pageFromHash(){
   if(SEO_PAGES[h]) return h;
   return 'landing';
 }
-window.goToBuilder = ()=>{ currentPage='builder'; location.hash='builder'; render(); window.scrollTo(0,0); };
-window.goToLanding = ()=>{ currentPage='landing'; location.hash=''; render(); window.scrollTo(0,0); };
-window.goToGuides = ()=>{ currentPage='guides'; location.hash='guides'; render(); window.scrollTo(0,0); };
-window.goToSeoPage = (slug)=>{ currentPage=slug; location.hash=slug; render(); window.scrollTo(0,0); };
+window.goToBuilder = ()=>{ window.location.href='/builder.html'; };
+window.goToLanding = ()=>{ window.location.href='/'; };
+window.goToGuides = ()=>{ window.location.href='/guides.html'; };
+window.goToSeoPage = (slug)=>{ window.location.href='/'+slug+'.html'; };
 window.addEventListener('hashchange', ()=>{ currentPage = pageFromHash(); render(); window.scrollTo(0,0); });
 
 function renderLanding(){
@@ -5306,6 +5286,7 @@ function renderLanding(){
       <div class="hero-center">
         <div class="lp-hero-preview">${renderPreview()}</div>
         <div class="ad-zone" style="margin-top:30px;"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'c1cafd7a4ca0a24cd3ee2197fa5a796b','format':'iframe','height':250,'width':300,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/c1cafd7a4ca0a24cd3ee2197fa5a796b/invoke.js'&gt;&lt;/script&gt;" width="300" height="250" frameborder="0" scrolling="no" style="border:0;overflow:hidden;max-width:100%;"></iframe></div>
+        <div class="hero-mobile-ad"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'0a50ce6f44742cb9b7e4c6030077c2bf','format':'iframe','height':600,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/0a50ce6f44742cb9b7e4c6030077c2bf/invoke.js'&gt;&lt;/script&gt;" width="160" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;"></iframe></div>
       </div>
       <div class="hero-ad-right"><span class="ad-label">Advertisement</span><iframe srcdoc="&lt;script&gt;atOptions = {'key':'0a50ce6f44742cb9b7e4c6030077c2bf','format':'iframe','height':600,'width':160,'params':{}};&lt;/script&gt;&lt;script src='https://www.highperformanceformat.com/0a50ce6f44742cb9b7e4c6030077c2bf/invoke.js'&gt;&lt;/script&gt;" width="160" height="600" frameborder="0" scrolling="no" style="border:0;overflow:hidden;"></iframe></div>
     </div>
@@ -5421,18 +5402,6 @@ window.goToBuilder = ()=>{ window.location.href='/builder.html'; };
 window.goToLanding = ()=>{ window.location.href='/'; };
 window.goToGuides = ()=>{ window.location.href='/guides.html'; };
 window.goToSeoPage = (slug)=>{ window.location.href='/'+slug+'.html'; };
-
-function isMobile(){
-  var ua = navigator.userAgent || '';
-  var isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua);
-  var isSmallScreen = window.innerWidth <= 1024;
-  var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  return isMobileUA || (isTouch && isSmallScreen);
-}
-function adHTML(html){
-  return isMobile() ? '' : html;
-}
-
 const SEO_FEATURES = [
   {icon:'☑', title:'ATS-optimized format', body:'Clean, scannable structure designed to pass applicant tracking systems.'},
   {icon:'⇩', title:'Free PDF download', body:'Export your finished resume as a PDF with no watermark, no cost.'},
@@ -5611,138 +5580,34 @@ function render(){
 window.setATS = (v)=> setState(s=> s.atsMode=v);
 window.setHeaderAlign = (v)=> setState(s=> s.headerAlign=v);
 
-
 currentPage = pageFromHash();
 render();
 </script>
 
-
-
 <script>
 (function(){
-  function isMobileDevice(){
-    var ua = navigator.userAgent || '';
-    var isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua);
-    var isSmallScreen = window.innerWidth <= 1024;
-    var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-    return isMobileUA || (isTouch && isSmallScreen);
-  }
-
-  if(!isMobileDevice()) return;
-
-  // Override document.write (used by ad scripts for redirect injection)
-  document.write = function(){};
-  document.writeln = function(){};
-
-  function stripAdIframes(){
-    var iframes = document.querySelectorAll('iframe[srcdoc]');
-    iframes.forEach(function(iframe){
-      var srcdoc = iframe.getAttribute('srcdoc') || '';
-      if(srcdoc.indexOf('highperformanceformat') !== -1 || srcdoc.indexOf('effectivecpmnetwork') !== -1 || srcdoc.indexOf('atOptions') !== -1){
-        iframe.removeAttribute('srcdoc');
-        iframe.style.display = 'none';
+  var ua=navigator.userAgent||'';
+  var isMobile=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua)||window.innerWidth<=1024||(('ontouchstart'in window)&&window.innerWidth<=1024);
+  if(!isMobile)return;
+  function sandboxAds(){
+    var iframes=document.querySelectorAll('iframe[srcdoc]');
+    for(var i=0;i<iframes.length;i++){
+      var sd=iframes[i].getAttribute('srcdoc')||'';
+      if((sd.indexOf('highperformance')!==-1||sd.indexOf('atOptions')!==-1)&&!iframes[i].hasAttribute('sandbox')){
+        iframes[i].setAttribute('sandbox','allow-scripts');
       }
-    });
-    // Also hide all ad zones
-    var adZones = document.querySelectorAll('.ad-zone, .ad-footer-zone, .hero-ad-left, .hero-ad-right, .preview-ad, .ad-sponsored-link');
-    adZones.forEach(function(z){ z.style.display = 'none'; });
-    // Remove native banner container
-    var nativeContainer = document.getElementById('container-26b5fa80071a4e882a4acebdb70e8e25');
-    if(nativeContainer) nativeContainer.style.display = 'none';
+    }
   }
-
-  // Run immediately and on DOMContentLoaded
-  stripAdIframes();
-  document.addEventListener('DOMContentLoaded', stripAdIframes);
-
-  // Patch the SPA's render function to strip ads after every render
-  // The SPA defines render() at the bottom of its script — we patch it after it's defined
+  sandboxAds();
+  document.addEventListener('DOMContentLoaded',sandboxAds);
   setTimeout(function(){
-    if(typeof render === 'function'){
-      var originalRender = render;
-      window.render = function(){
-        var result = originalRender.apply(this, arguments);
-        stripAdIframes();
-        return result;
-      };
+    if(typeof render==='function'){
+      var orig=render;
+      window.render=function(){var r=orig.apply(this,arguments);setTimeout(sandboxAds,0);return r;};
     }
-  }, 100);
-
-  // Use setInterval as a backup — strip ads every 500ms for 10 seconds
-  var stripCount = 0;
-  var stripInterval = setInterval(function(){
-    stripAdIframes();
-    stripCount++;
-    if(stripCount > 20) clearInterval(stripInterval); // Stop after 10 seconds
-  }, 500);
-
-  // Use MutationObserver to catch dynamically added iframes
-  if(window.MutationObserver){
-    var observer = new MutationObserver(function(){
-      stripAdIframes();
-    });
-    if(document.body){
-      observer.observe(document.body, {childList: true, subtree: true, attributes: true, attributeFilter: ['srcdoc']});
-    } else {
-      document.addEventListener('DOMContentLoaded', function(){
-        observer.observe(document.body, {childList: true, subtree: true, attributes: true, attributeFilter: ['srcdoc']});
-      });
-    }
-  }
-})();
-</script>
-
-
-<script>
-(function(){
-  var ua = navigator.userAgent || '';
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua) || window.innerWidth <= 1024 || (('ontouchstart' in window) && window.innerWidth <= 1024);
-  if(!isMobile) return;
-
-  // Block document.write (used by ad scripts for redirect injection)
-  document.write = function(){};
-  document.writeln = function(){};
-
-  function killAds(){
-    // 1. Remove srcdoc from ALL ad iframes (prevents ad JS from executing)
-    var iframes = document.querySelectorAll('iframe[srcdoc]');
-    for(var i = 0; i < iframes.length; i++){
-      var sd = iframes[i].getAttribute('srcdoc') || '';
-      if(sd.indexOf('highperformance') !== -1 || sd.indexOf('effectivecpm') !== -1 || sd.indexOf('atOptions') !== -1){
-        iframes[i].removeAttribute('srcdoc');
-        iframes[i].src = 'about:blank';
-      }
-    }
-
-    // 2. Hide ALL ad-related elements
-    var adSelectors = '.ad-zone, .ad-footer-zone, .hero-ad-left, .hero-ad-right, .hero-mobile-ad, .preview-ad, .ad-sponsored-link, .ad-spa-zone, #container-26b5fa80071a4e882a4acebdb70e8e25';
-    var adEls = document.querySelectorAll(adSelectors);
-    for(var j = 0; j < adEls.length; j++){
-      adEls[j].style.cssText = 'display:none !important;visibility:hidden !important;width:0 !important;height:0 !important;position:absolute !important;left:-9999px !important;';
-    }
-
-    // 3. Remove any ad scripts that were dynamically loaded
-    var adScripts = document.querySelectorAll('script[src*="effectivecpmnetwork"], script[src*="highperformanceformat"]');
-    for(var k = 0; k < adScripts.length; k++){
-      adScripts[k].remove();
-    }
-  }
-
-  // Run immediately
-  killAds();
-
-  // Run on DOMContentLoaded
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', killAds);
-  }
-
-  // Run every 100ms for 30 seconds (catches SPA re-renders)
-  var count = 0;
-  var interval = setInterval(function(){
-    killAds();
-    count++;
-    if(count > 300) clearInterval(interval); // Stop after 30 seconds
-  }, 100);
+  },100);
+  var c=0;
+  var iv=setInterval(function(){sandboxAds();if(++c>150)clearInterval(iv);},200);
 })();
 </script>
 </body>
