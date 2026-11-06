@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<rect width="1080" height="1350" fill="#F2F0EB"/>
+<rect x="60" y="60" width="960" height="1230" rx="34" fill="#FAF9F6"/>
+<text x="112" y="151" font-family="Arial,sans-serif" font-size="23" font-weight="700" letter-spacing="6" fill="#59636A">FOUNDER NOTES / 01</text>
+<path d="M112 186H968" stroke="#DADBD6" stroke-width="2"/>
+<text x="112" y="315" font-family="Arial,sans-serif" font-size="91" font-weight="800" letter-spacing="-5" fill="#1C2B32">The roadmap</text>
+<text x="112" y="420" font-family="Arial,sans-serif" font-size="91" font-weight="800" letter-spacing="-5" fill="#1C2B32">is mostly</text>
+<text x="112" y="525" font-family="Arial,sans-serif" font-size="91" font-weight="800" letter-spacing="-5" fill="#456DE4">decisions</text>
+<text x="112" y="630" font-family="Arial,sans-serif" font-size="91" font-weight="800" letter-spacing="-5" fill="#1C2B32">not to build.</text>
+<rect x="112" y="733" width="856" height="120" rx="18" fill="#F0F1F0" stroke="#DFE1DD" stroke-width="2"/>
+<circle cx="172" cy="793" r="17" fill="none" stroke="#AEB6B7" stroke-width="4"/>
+<path d="M217 780H581 M217 809H486" stroke="#BBC2C1" stroke-width="11" stroke-linecap="round"/>
+<rect x="112" y="878" width="856" height="120" rx="18" fill="#F0F1F0" stroke="#DFE1DD" stroke-width="2"/>
+<circle cx="172" cy="938" r="17" fill="none" stroke="#AEB6B7" stroke-width="4"/>
+<path d="M217 925H655 M217 954H531" stroke="#BBC2C1" stroke-width="11" stroke-linecap="round"/>
+<rect x="112" y="1023" width="856" height="120" rx="18" fill="#E5ECFF" stroke="#456DE4" stroke-width="3"/>
+<circle cx="172" cy="1083" r="21" fill="#456DE4"/>
+<path d="M161 1083L169 1091L184 1075" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="219" y="1096" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#1C2B32">The one that matters</text>
+<path d="M112 1200H968" stroke="#DADBD6" stroke-width="2"/>
+<text x="112" y="1252" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#59636A">FOCUS BEFORE FEATURES</text>
+</svg>
